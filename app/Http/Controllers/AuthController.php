@@ -22,8 +22,8 @@ class AuthController extends Controller
       return match ($user->role) {
         'admin' => redirect('/admin'),
         'supervisor' => redirect('/supervisor'),
-        'alumno' => redirect('/alumno'),
-        default => redirect('/dashboard'),
+        'alumno' => redirect('/estudiante'),
+        default => redirect('/paciente'),
       };
     }
 

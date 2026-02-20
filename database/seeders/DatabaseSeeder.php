@@ -2,48 +2,53 @@
 
 namespace Database\Seeders;
 
+use App\Enums\UserRole;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::updateOrCreate(
+            ['email' => 'admin@demo.com'],
+            [
+                'name' => 'Admin User',
+                'password' => Hash::make('123'),
+                'role' => UserRole::Admin, // o 'admin' si tu columna no es enum cast
+            ]
+        );
 
-        // Create specific users with roles
-        User::create([
-            'name' => 'Admin User',
-            'email' => 'admin@demo.com',
-            'password' => bcrypt('password'),
-            'role' => 'admin',
-        ]);
+        User::updateOrCreate(
+            ['email' => 'supervisor@demo.com'],
+            [
+                'name' => 'Supervisor User',
+                'password' => Hash::make('123'),
+                'role' => UserRole::Supervisor, // o 'supervisor'
+            ]
+        );
 
-        User::create([
-            'name' => 'Supervisor User',
-            'email' => 'supervisor@demo.com',
-            'password' => bcrypt('password'),
-            'role' => 'supervisor',
-        ]);
+        User::updateOrCreate(
+            ['email' => 'alumno@demo.com'],
+            [
+                'name' => 'Alumno User',
+                'password' => Hash::make('123'),
+                'role' => UserRole::Alumno, // o 'alumno'
+            ]
+        );
 
-        User::create([
-            'name' => 'Alumno User',
-            'email' => 'alumno@demo.com',
-            'password' => bcrypt('password'),
-            'role' => 'alumno',
-        ]);
+        User::updateOrCreate(
+            ['email' => 'paciente@demo.com'],
+            [
+                'name' => 'Paciente User',
+                'password' => Hash::make('123'),
+                // 'role' => UserRole::Paciente, // si aplica, sino omite
+            ]
+        );
 
-        User::create([
-            'name' => 'Paciente User',
-            'email' => 'paciente@demo.com',
-            'password' => bcrypt('password'),
-            // 'role' => 'paciente', // Default
+        $this->call([
+            AdminUserSeeder::class,
         ]);
     }
 }
