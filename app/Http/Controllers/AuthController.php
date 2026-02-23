@@ -20,10 +20,10 @@ class AuthController extends Controller
       $user = Auth::user();
 
       return match ($user->role) {
-        'admin' => redirect('/admin'),
-        'supervisor' => redirect('/supervisor'),
-        'alumno' => redirect('/alumno'),
-        default => redirect('/dashboard'),
+        \App\Enums\UserRole::Admin      => redirect('/admin'),
+        \App\Enums\UserRole::Supervisor => redirect('/supervisor'),
+        \App\Enums\UserRole::Student    => redirect('/estudiante'),
+        default                        => redirect('/paciente'),
       };
     }
 

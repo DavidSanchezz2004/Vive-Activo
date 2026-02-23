@@ -1,0 +1,70 @@
+{
+    "consultations": [
+        {
+            "id": 3,
+            "patient_id": 3,
+            "student_id": 2,
+            "type": "Cual es tu nombre",
+            "mode": "zoom",
+            "status": "confirmed",
+            "requested_at": "2026-02-20T22:49:54.000000Z",
+            "scheduled_at": "2026-02-23T14:30:00.000000Z",
+            "meeting_url": "https:\/\/www.youtube.com\/watch?v=tF_-oPPXcPk&list=RDGMEM2VCIgaiSqOfVzBAjPJm-ag&index=16",
+            "notes": "Cual es su nombre",
+            "created_by": 10,
+            "created_at": "2026-02-20T22:49:54.000000Z",
+            "updated_at": "2026-02-20T22:56:15.000000Z"
+        },
+        {
+            "id": 2,
+            "patient_id": 3,
+            "student_id": 3,
+            "type": "De que color fue el caballo blanco de san martin",
+            "mode": "presencial",
+            "status": "confirmed",
+            "requested_at": "2026-02-20T22:17:13.000000Z",
+            "scheduled_at": "2026-03-04T17:17:00.000000Z",
+            "meeting_url": null,
+            "notes": null,
+            "created_by": 1,
+            "created_at": "2026-02-20T22:17:13.000000Z",
+            "updated_at": "2026-02-20T22:21:54.000000Z"
+        }
+    ],
+    "sessions": [
+        {
+            "id": 2,
+            "patient_id": 3,
+            "student_id": 3,
+            "consultation_id": null,
+            "scheduled_at": "2026-02-25T17:17:00.000000Z",
+            "status": "pending",
+            "deducts": true,
+            "notes": null,
+            "weight_kg": null,
+            "rpe": null,
+            "attended_at": null,
+            "rescheduled_at": null,
+            "created_by": 1,
+            "created_at": "2026-02-20T22:17:44.000000Z",
+            "updated_at": "2026-02-20T22:17:44.000000Z"
+        },
+        {
+            "id": 1,
+            "patient_id": 3,
+            "student_id": 3,
+            "consultation_id": null,
+            "scheduled_at": "2026-02-22T22:00:00.000000Z",
+            "status": "done",
+            "deducts": true,
+            "notes": "La evolucion clinica va acorde al plan",
+            "weight_kg": "80.00",
+            "rpe": 7,
+            "attended_at": "2026-02-20T22:58:58.000000Z",
+            "rescheduled_at": null,
+            "created_by": 1,
+            "created_at": "2026-02-20T21:46:54.000000Z",
+            "updated_at": "2026-02-20T22:58:58.000000Z"
+        }
+    ]
+}
