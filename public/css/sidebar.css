@@ -2,7 +2,9 @@
 
 .d-sidebar {
     box-shadow: var(--d-shadow-sm);
-    transition: background .2s ease, border-color .2s ease;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .d-brand {
@@ -74,7 +76,7 @@
 
 .d-nav-title {
     font-size: 11px;
-    letter-spacing: .08em;
+    letter-spacing: 0.08em;
     font-weight: 700;
     color: #94a3b8;
     padding: 2px 6px 8px;
@@ -131,7 +133,7 @@
     cursor: pointer;
     background: #cbd5e1;
     border-radius: 999px;
-    transition: .25s;
+    transition: 0.25s;
 }
 
 .sidebar-theme-slider::before {
@@ -143,7 +145,7 @@
     top: 3px;
     border-radius: 50%;
     background: #fff;
-    transition: .25s;
+    transition: 0.25s;
 }
 
 .sidebar-theme-toggle input:checked + .sidebar-theme-slider {
@@ -156,7 +158,9 @@
 
 .d-user-profile {
     background: var(--d-surface);
-    transition: background .2s ease, border-color .2s ease;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .admin-avatar {
@@ -380,7 +384,9 @@
 }
 
 .kpi-card-admin {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .kpi-card-admin:hover {
@@ -402,6 +408,14 @@ body.sidebar-dark .d-brand,
 body.sidebar-dark .d-user-profile {
     background: #0f172a;
     border-color: #1e293b;
+}
+
+body.sidebar-dark {
+    --d-bg: #0b1220;
+    --d-surface: #0f172a;
+    --d-text: #e2e8f0;
+    --d-muted: #94a3b8;
+    --d-border: #24324b;
 }
 
 body.sidebar-dark .d-profile-top {
@@ -429,11 +443,22 @@ body.sidebar-dark .d-content {
 body.sidebar-dark .d-card {
     background: #111c31;
     border-color: #24324b;
+    color: #e2e8f0;
 }
 
 body.sidebar-dark .d-card h3,
 body.sidebar-dark .d-card p {
     color: #e2e8f0;
+}
+
+body.sidebar-dark .d-table th {
+    background: #0f172a;
+    border-bottom-color: var(--d-border);
+    color: var(--d-muted);
+}
+
+body.sidebar-dark .d-table tr:hover {
+    background: rgba(255, 255, 255, 0.04);
 }
 
 body.sidebar-dark .d-btn-outline {
@@ -641,30 +666,29 @@ body.sidebar-dark .sidebar-help-card p {
         max-width: 78px;
     }
 
+    @media (max-width: 480px) {
+        .d-header {
+            padding: 0 10px;
+        }
 
-@media (max-width: 480px) {
-    .d-header {
-        padding: 0 10px;
-    }
+        .d-page-title {
+            display: none;
+        }
 
-    .d-page-title {
-        display: none;
-    }
+        .header-user-welcome {
+            display: none;
+        }
 
-    .header-user-welcome {
-        display: none;
-    }
+        .header-actions {
+            gap: 6px;
+        }
 
-    .header-actions {
-        gap: 6px;
+        .header-avatar {
+            width: 34px;
+            height: 34px;
+            font-size: 12px;
+        }
     }
-
-    .header-avatar {
-        width: 34px;
-        height: 34px;
-        font-size: 12px;
-    }
-}
     .user-dropdown-menu {
         right: -8px;
         min-width: 180px;

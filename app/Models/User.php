@@ -53,14 +53,18 @@ class User extends Authenticatable
 
     public function profile()
     {
-      return $this->hasOne(\App\Models\UserProfile::class);
+        return $this->hasOne(\App\Models\UserProfile::class);
     }
 
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    //     'password' => 'hashed',
-    //     'role' => UserRole::class,
-    // ];
+    public function patient()
+    {
+        return $this->hasOne(Patient::class);
+    }
+
+    public function student()
+    {
+        return $this->hasOne(Student::class);
+    }
 
     public function isAdmin(): bool
     {
